@@ -10,6 +10,7 @@ const app = new Hono<{
 
 app.post('/api/v1/signup',  async (c) => {
   const prisma = new PrismaClient({
+	  //@ts-ignore ---> this will ignore the next line of code 
     datasourceUrl: c.env.DATABASE_URL,
    }).$extends(withAccelerate())
 
